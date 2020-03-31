@@ -31,7 +31,8 @@ app.ws('/paint', function (ws, req) {
             case 'CREATE_CIRCLE':
                 const newCircle = {
                     x: parsed.x,
-                    y: parsed.y
+                    y: parsed.y,
+                    color: parsed.color
                 };
                 Object.keys(connections).forEach(c => {
                     connections[c].send(JSON.stringify({
