@@ -44,11 +44,9 @@ class App extends React.Component {
         e.persist();
 
         const canvasElement = this.canvas.current;
-        let ctx = canvasElement.getContext("2d");
         const rect = canvasElement.getBoundingClientRect();
         const x = e.clientX - rect.left;
         const y = e.clientY - rect.top;
-        ctx.beginPath();
         const message = {type: 'CREATE_CIRCLE', x, y, color: this.state.color};
         this.websocket.send(JSON.stringify(message));
     };
