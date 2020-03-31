@@ -51,9 +51,6 @@ class App extends React.Component {
         ctx.beginPath();
         const message = {type: 'CREATE_CIRCLE', x, y, color: this.state.color};
         this.websocket.send(JSON.stringify(message));
-        ctx.arc(x,y,10,0,2*Math.PI);
-        ctx.strokeStyle = this.state.color;
-        ctx.stroke();
     };
     colorChange = (color, event) => {
         this.setState({color: color.hex})
